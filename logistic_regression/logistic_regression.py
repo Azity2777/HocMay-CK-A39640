@@ -4,7 +4,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 
-# Bước 1: Tải dữ liệu
+#Tải dữ liệu
 train_data = pd.read_csv('../De-bai/train_data.txt', header=None)
 test_data = pd.read_csv('../De-bai/test_data.txt', header=None)
 
@@ -17,7 +17,7 @@ X_train = train_data.iloc[:, :-1]
 y_train = train_data.iloc[:, -1]
 X_test = test_data
 
-# Bước 2: Chia dữ liệu huấn luyện thành tập huấn luyện và tập kiểm tra
+# Chia dữ liệu huấn luyện thành tập huấn luyện và tập kiểm tra
 X_train_split, X_val, y_train_split, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=42)
 
 # Chuẩn hóa dữ liệu
@@ -26,7 +26,7 @@ X_train_split = scaler.fit_transform(X_train_split)
 X_val = scaler.transform(X_val)
 X_test = scaler.transform(X_test)
 
-# Bước 3: Khởi tạo mô hình
+# Khởi tạo mô hình
 model = LogisticRegression(max_iter=2000)
 
 # Huấn luyện mô hình
