@@ -36,7 +36,7 @@ X_val = scaler.transform(X_val)
 X_test = scaler.transform(X_test)
 
 #Khởi tạo mô hình với các tham số
-model = DecisionTreeClassifier(max_depth=10, min_samples_split=5) 
+model = DecisionTreeClassifier(max_depth=15, min_samples_split=10)
 
 # Huấn luyện mô hình
 model.fit(X_train_split, y_train_split)
